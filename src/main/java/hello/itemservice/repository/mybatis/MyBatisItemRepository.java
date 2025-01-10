@@ -25,16 +25,16 @@ public class MyBatisItemRepository implements ItemRepository {
 
     @Override
     public void update(Long itemId, ItemUpdateDto updateParam) {
-
+        itemMapper.update(itemId, updateParam);
     }
 
     @Override
     public Optional<Item> findById(Long id) {
-        return Optional.empty();
+        return itemMapper.findById(id);
     }
 
     @Override
     public List<Item> findAll(ItemSearchCond cond) {
-        return List.of();
+        return itemMapper.findAll(cond);
     }
 }
